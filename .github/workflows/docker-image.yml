@@ -17,6 +17,7 @@ jobs:
     - name: Build the Docker image
       run: docker buildx build --platform linux/amd64 -t us-west1-docker.pkg.dev/mariakhomenko-cdks2/amethyst-dev/gcp-training-javascript . --file Dockerfile --tag amethyst-dev:$(date +%s)
 
+    - uses: actions/setup-node@v4
     - name: Run tests
       run: npm run test
 
